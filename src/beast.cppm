@@ -1,12 +1,11 @@
 module;
 
-#define BOOST_ASIO_NO_SSL
 #include <boost/beast/core.hpp>
 #include <boost/beast/websocket.hpp>
 #include <boost/beast/http.hpp>
 #include <boost/beast/core/buffers_to_string.hpp>
 
-export module beast;
+export module ws_chat:beast;
 
 export namespace beast {
     using ::boost::beast::async_teardown;

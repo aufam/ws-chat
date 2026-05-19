@@ -4,36 +4,37 @@ module;
 #include <memory>
 #include <set>
 #include <string>
-#include <coroutine>
 #include <fstream>
 
-
-#pragma GCC diagnostic push
-#pragma GCC diagnostic ignored "-Wreserved-module-identifier"
-
-export module std;
-
-#pragma GCC diagnostic pop
-
+export module ws_chat:std;
 
 export namespace std {
     using ::std::cerr;
     using ::std::cout;
-    using ::std::endl;
-
     using ::std::enable_shared_from_this;
+    using ::std::endl;
+    using ::std::exception;
+    using ::std::flush;
     using ::std::forward;
+    using ::std::fstream;
     using ::std::ifstream;
     using ::std::ignore;
+    using ::std::ios;
+    using ::std::iostream;
+    using ::std::istream;
+    using ::std::istreambuf_iterator;
     using ::std::make_shared;
+    using ::std::make_unique;
     using ::std::move;
+    using ::std::ostream;
+    using ::std::runtime_error;
     using ::std::set;
     using ::std::shared_ptr;
     using ::std::string;
+    using ::std::unique_ptr;
 
-    using ::std::coroutine_handle;
-    using ::std::coroutine_traits;
-    using ::std::noop_coroutine;
-    using ::std::suspend_always;
-    using ::std::suspend_never;
+    using ::std::operator<<;
+    using ::std::operator>>;
+    using ::std::operator+;
+    using ::std::operator==;
 } // namespace std

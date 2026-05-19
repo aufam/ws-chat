@@ -1,6 +1,5 @@
 module;
 
-#define BOOST_ASIO_NO_SSL
 #include <boost/asio/io_context.hpp>
 #include <boost/asio/ip/tcp.hpp>
 #include <boost/asio/awaitable.hpp>
@@ -9,7 +8,7 @@ module;
 #include <boost/asio/co_spawn.hpp>
 #include <boost/asio/ssl.hpp>
 
-export module asio;
+export module ws_chat:asio;
 
 export namespace asio {
     using ::boost::asio::any_io_executor;
@@ -37,3 +36,11 @@ export namespace asio::ip {
 export namespace asio::ssl {
     using ::boost::asio::ssl::stream;
 } // namespace asio::ssl
+
+export namespace std {
+    using ::std::coroutine_handle;
+    using ::std::coroutine_traits;
+    using ::std::noop_coroutine;
+    using ::std::suspend_always;
+    using ::std::suspend_never;
+} // namespace std

@@ -1,8 +1,7 @@
-#include <boost/asio/awaitable.hpp> // TODO: otherwise std::coroutine_traits will complain
-
-import std;
-import asio;
-import beast;
+module ws_chat;
+import :std;
+import :asio;
+import :beast;
 
 namespace http = beast::http;
 namespace ws   = beast::websocket;
@@ -151,7 +150,7 @@ asio::awaitable<void> listener(SharedState &state) {
     }
 }
 
-int main() {
+extern "C++" int main() {
     SharedState state;
 
     try {
