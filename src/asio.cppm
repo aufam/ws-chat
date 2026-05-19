@@ -6,7 +6,6 @@ module;
 #include <boost/asio/use_awaitable.hpp>
 #include <boost/asio/detached.hpp>
 #include <boost/asio/co_spawn.hpp>
-#include <boost/asio/ssl.hpp>
 
 export module ws_chat:asio;
 
@@ -32,10 +31,6 @@ export namespace asio::this_coro {
 export namespace asio::ip {
     using ::boost::asio::ip::tcp;
 } // namespace asio::ip
-
-export namespace asio::ssl {
-    using ::boost::asio::ssl::stream;
-} // namespace asio::ssl
 
 export namespace std {
     using ::std::coroutine_handle;
