@@ -21,6 +21,9 @@ pre = """
     mkdir -p ../include && \
     ./dist/bin/bcp boost/beast boost/asio ../include && \
     cd .. && \
+    find include/ -mindepth 1 -maxdepth 1 \
+        ! -name 'boost' \
+        -exec rm -rf {} + && \
     rm -rf boost_1_89_0* \
 )
 """
