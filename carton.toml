@@ -1,0 +1,28 @@
+[package]
+name = "ws-chat"
+version = "0.1"
+edition = 23
+
+[profile.dev]
+cxx = "clang++"
+flags = ["-ferror-limit=1"]
+
+[profile.release]
+cxx = "clang++"
+
+[lib]
+mod = ["src/*.cppm"]
+link-flags = ["-lssl", "-lcrypto"]
+pre = """
+[ -d include/boost/beast ] || (\
+    wget https://archives.boost.io/release/1.89.0/source/boost_1_89_0.tar.gz && \
+    tar -xzf boost_1_89_0.tar.gz && \
+    cd boost_1_89_0 && \
+    ./bootstrap.sh && \
+    ./b2 tools/bcp && \
+    mkdir -p ../include && \
+    ./dist/bin/bcp boost/beast boost/asio ../include && \
+    cd .. && \
+    rm -rf boost_1_89_0* \
+)
+"""
