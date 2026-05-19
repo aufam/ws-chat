@@ -1,9 +1,9 @@
 module ws_chat;
 import :std;
 import :asio;
+import :tcp;
 import :beast;
 
-using asio::ip::tcp;
 
 asio::awaitable<void> listener(ws_chat::SharedState &state) {
     auto executor = co_await asio::this_coro::executor;

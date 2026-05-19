@@ -1,6 +1,7 @@
 export module ws_chat;
 import :std;
 import :asio;
+import :tcp;
 import :beast;
 
 export namespace ws_chat {
@@ -12,7 +13,6 @@ module :private;
 
 namespace http = beast::http;
 namespace ws   = beast::websocket;
-using asio::ip::tcp;
 
 class ws_chat::SharedState {
 public:
