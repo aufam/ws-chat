@@ -2,7 +2,6 @@ module ws_chat;
 import :std;
 import :asio;
 import :tcp;
-import :beast;
 
 
 asio::awaitable<void> listener(ws_chat::SharedState &state) {
